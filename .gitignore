@@ -1,0 +1,6 @@
+*.log
+*.db
+*.class
+/bin
+/.settings
+.project
