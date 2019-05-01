@@ -28,6 +28,8 @@ public class AionLoadXMLFoldersToSqlite2 {
 
 	private static final Logger logger = LogManager.getLogger(AionLoadXMLFoldersToSqlite2.class);
 
+	private DBConnection connection;
+	
 	private String dbFile;
 	private Map<String, XMLFinder> folders;
 	
@@ -39,8 +41,10 @@ public class AionLoadXMLFoldersToSqlite2 {
 	
 	private Set<String> DBMSReservedWords = SqliteReservedWordsList.sqliteReservedWords;
 	
-	public AionLoadXMLFoldersToSqlite2(String sqliteDatabaseFile){
-		dbFile = sqliteDatabaseFile;
+	//public AionLoadXMLFoldersToSqlite2(String sqliteDatabaseFile){
+	public AionLoadXMLFoldersToSqlite2(DBConnection connection) {
+		//dbFile = sqliteDatabaseFile;
+		this.connection = connection;
 		folders = new LinkedHashMap<String, XMLFinder>();
 		excludedFolders = new ArrayList<String>();
 	}
@@ -97,7 +101,8 @@ public class AionLoadXMLFoldersToSqlite2 {
 
 		handler2.setAdditionalColumns(additionalColumns);
 		
-		DBConnection connection = new SqliteConnection(dbFile);
+		//DBConnection connection = new SqliteConnection(dbFile);
+		
 		AionXmlLoadRecords3 handler3 = new AionXmlLoadRecords3(potentialTables, tableStructures);
 		handler3.setDBConnection(connection);
 		
@@ -253,7 +258,7 @@ public class AionLoadXMLFoldersToSqlite2 {
 		
 		connection.executeUpdate("COMMIT;");
 				
-		connection.executeUpdate("create index index_strings on strings (folder, name);");
+		//connection.executeUpdate("create index index_strings on strings (folder, name);");
 		
 		connection.disconnect();
 		
