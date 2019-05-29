@@ -307,7 +307,7 @@ public class AionXmlGetColumnsBase extends DefaultHandler {
 	//Append characters to current attribute
 	public final void characters (char ch[], int start, int length){
 		
-		String string = new String(ch, start, length).trim();
+		String string = new String(ch, start, length);//.trim();
 		if (string.length() > 0) columnContents(string);
 		/*
 		if (printingEnabled) {			

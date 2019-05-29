@@ -11,7 +11,7 @@ import sqliteJDBC.SqliteConnection;
 
 public class LoadAionXmlToSqliteSeparate {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, SAXException, IOException {
-		/*
+		
 		new Thread(() -> {
 				try {
 				DBConnection connection = new SqliteConnection("C:/stuff/Aion65NA.db");
@@ -38,7 +38,7 @@ public class LoadAionXmlToSqliteSeparate {
 			//failures: animations, Dialog, Tutorials
 			
 		}).start();
-		
+		/*
 		new Thread(() -> {
 			try {
 				DBConnection connection = new SqliteConnection("C:/stuff/Aion65TW.db");
@@ -65,7 +65,7 @@ public class LoadAionXmlToSqliteSeparate {
 			//failures: animations, Dialog, Tutorials
 			
 		}).start();
-		
+		*/
 		new Thread(() -> {
 			try {
 				DBConnection connection = new SqliteConnection("C:/stuff/AionL10N.db");
@@ -91,7 +91,7 @@ public class LoadAionXmlToSqliteSeparate {
 			//failures: animations, Dialog, Tutorials
 			
 		}).start();
-		*/
+		
 		new Thread(() -> {
 			try {
 				DBConnection connection = new SqliteConnection("C:/stuff/AionLevels65.db");

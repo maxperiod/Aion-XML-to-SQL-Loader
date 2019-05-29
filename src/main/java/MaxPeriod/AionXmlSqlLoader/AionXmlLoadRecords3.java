@@ -90,7 +90,7 @@ public class AionXmlLoadRecords3 extends AionXmlGetColumnsBase {
 	
 	@Override
 	public void columnContents(String ch) {
-		columnContents.append(ch);
+		if (columnContents != null) columnContents.append(ch);
 	}
 	
 	@Override

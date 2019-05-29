@@ -65,6 +65,11 @@ public class TableRecord {
 			
 			if (addSingleQuotes && value != null) sb.append('\'');
 			
+			if (!addSingleQuotes && value != null) {
+				value = value.replace("f", "");
+				value = value.replace("d", "");
+			}
+			
 			if (value != null) {
 				if (value.trim().length() == 0 && !addSingleQuotes) sb.append("NULL");
 				else sb.append(value.replace("'",  "''"));
